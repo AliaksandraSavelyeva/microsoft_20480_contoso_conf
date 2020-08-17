@@ -73,7 +73,7 @@ function saveStar(sessionId, isStarred) {
             if (request.readyState === 4 && request.status === 200) {
                 const response = JSON.parse(request.responseText);
                 if (response.starCount > 50) {
-                    alert("This session is very popular! Be sure to arrive early to get a       seat.");
+                    alert("This session is very popular! Be sure to arrive early to get a seat.");
                 }
             }
         };
