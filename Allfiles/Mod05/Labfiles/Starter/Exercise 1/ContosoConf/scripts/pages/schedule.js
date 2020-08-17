@@ -9,6 +9,21 @@ const track2CheckBox = document.getElementById("show-track-2");
 //       Save the array into the schedule variable
 //       Then call displaySchedule()
 
+function downloadSchedule() {
+    const request = new XMLHttpRequest();
+    request.open("GET", "/schedule/list", true);
+    request.onreadystatechange = function () {
+        if (request.readyState === 4) {
+            const response = JSON.parse(request.responseText);
+            response.schedule.forEach(function (element) {
+                schedule.push(element);
+            });
+            displaySchedule();
+        }
+    };
+    request.send();
+}
+
 function createSessionElement(session) {
     const li = document.createElement("li");
 
@@ -72,6 +87,8 @@ function handleListClick(event) {
 track1CheckBox.addEventListener("click", displaySchedule, false);
 track2CheckBox.addEventListener("click", displaySchedule, false);
 list.addEventListener("click", handleListClick, false);
+
+downloadSchedule();
 
 // SIG // Begin signature block
 // SIG // MIIaVgYJKoZIhvcNAQcCoIIaRzCCGkMCAQExCzAJBgUr
