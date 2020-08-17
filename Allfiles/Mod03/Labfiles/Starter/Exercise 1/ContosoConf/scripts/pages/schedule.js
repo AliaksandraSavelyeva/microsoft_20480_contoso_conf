@@ -106,6 +106,10 @@ function displaySchedule() {
     // TODO: Task 4 - Loop through the schedule array
     //       Create session elements
     //       Append the elements to the list   
+    for (let i = 0; i < schedule.length; i++) {
+        const li = createSessionElement(schedule[i]);
+        list.appendChild;
+    }
 }
 
 displaySchedule();
