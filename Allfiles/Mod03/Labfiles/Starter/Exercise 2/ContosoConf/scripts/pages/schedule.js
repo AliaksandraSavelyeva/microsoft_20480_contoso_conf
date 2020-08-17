@@ -115,6 +115,11 @@ function displaySchedule() {
 }
 
 displaySchedule();
+
+track1CheckBox.addEventListener("click", displaySchedule, false);
+track2CheckBox.addEventListener("click", displaySchedule, false);
+
+
 // SIG // Begin signature block
 // SIG // MIIaVgYJKoZIhvcNAQcCoIIaRzCCGkMCAQExCzAJBgUr
 // SIG // DgMCGgUAMGcGCisGAQQBgjcCAQSgWTBXMDIGCisGAQQB
