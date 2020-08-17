@@ -14,11 +14,19 @@ function downloadSchedule() {
     request.open("GET", "/schedule/list", true);
     request.onreadystatechange = function () {
         if (request.readyState === 4) {
-            const response = JSON.parse(request.responseText);
-            response.schedule.forEach(function (element) {
-                schedule.push(element);
-            });
-            displaySchedule();
+            try {
+                const response = JSON.parse(request.responseText);
+                if (request.status === 200) {
+                    response.schedule.forEach(function (element) {
+                        schedule.push(element);
+                    });
+                    displaySchedule();
+                } else {
+                    alert(response.message);
+                }
+            } catch (exception) {
+                alert("Schedule list not available.");
+            }
         }
     };
     request.send();
