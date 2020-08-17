@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8"/>
@@ -39,16 +39,34 @@
                         ConfirmPassword
                         WebsiteUrl - optional url string
                     -->
-                        
-                    <!-- Use the following template for the inputs -->
-                    <div class="field">
-                        <label for="{input-id}">label:</label>
-                        <input type="{type}" id="{input-id}" name="{input-name}" />
-                    </div>
 
-                    <div>
-                        <button type="submit">Register</button>
+                    <div class="field">
+                        <label for="first-name">First name:</label>
+                        <input type="text" id="first-name" name="FirstName" />
                     </div>
+                    <div class="field">
+                        <label for="last-name">Last name:</label>
+                        <input type="text" id="last-name" name="LastName" />
+                    </div>
+                    <div class="field">
+                        <label for="email-address">Email address:</label>
+                        <input type="email" id="email-address" name="EmailAddress" />
+                    </div>
+                    <div class="field">
+                        <label for="password">Choose a password:</label>
+                        <input type="password" id="password" name="Password" />
+                    </div>
+                    <div class="field">
+                        <label for="confirm-password">Confirm your password:</label>
+                        <input type="password" id="confirm-password" name="ConfirmPassword" />
+                    </div>
+                    <div class="field">
+                        <label for="website">Website/blog:</label>
+                        <input type="url" id="website" name="WebsiteUrl" />
+
+                        <div>
+                            <button type="submit">Register</button>
+                        </div>
                 </form>
             </div>
         </section>
