@@ -66,6 +66,11 @@ function saveStar(sessionId, isStarred) {
     //       e.g. "starred=true" or "starred=false"
     //       The response contains a JSON object "{ starCount: <number> }"
     //       If the star count is more than 50, warn the user about this being a busy session.
+    const request = new XMLHttpRequest();
+    request.open("POST", "/schedule/star/" + sessionId, true);
+    request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    const data = "starred=" + isStarred;
+    request.send(data);
 }
 
 function handleListClick(event) {
